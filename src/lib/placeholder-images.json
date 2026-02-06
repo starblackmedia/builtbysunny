@@ -41,6 +41,30 @@
       "description": "Synthesizer hardware",
       "imageUrl": "https://images.unsplash.com/photo-1600152015632-77c2aa5565d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzeW50aGVzaXplcnxlbnwwfHx8fDE3NzAzODI0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "synthesizer"
+    },
+    {
+      "id": "project-backend",
+      "description": "Server and database illustration",
+      "imageUrl": "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzZXJ2ZXIlMjBkYXRhYmFzZXxlbnwwfHx8fDE3NzAzMDk0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "server database"
+    },
+    {
+      "id": "project-web",
+      "description": "Web application interface",
+      "imageUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3NzAyOTAyODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web application"
+    },
+    {
+      "id": "project-mobile",
+      "description": "Mobile application on a phone",
+      "imageUrl": "https://images.unsplash.com/photo-1601972602237-8c79241e468b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzcwMzc2ODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project-ai",
+      "description": "Abstract artificial intelligence concept",
+      "imageUrl": "https://images.unsplash.com/photo-1694903110330-cc64b7e1d21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc3MDMwNTAwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artificial intelligence"
     }
   ]
 }

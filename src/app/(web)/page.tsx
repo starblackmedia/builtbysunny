@@ -73,7 +73,7 @@ export default function Home() {
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            <Link href="/modules/auth">
+            <Link href="/explore">
               Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
