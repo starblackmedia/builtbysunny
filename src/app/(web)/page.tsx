@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   Code,
@@ -15,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const skills = [
   {
@@ -56,30 +58,50 @@ const skills = [
 ];
 
 export default function Home() {
+  const headshot = PlaceHolderImages.find((p) => p.id === 'headshot') || {
+    imageUrl: 'https://picsum.photos/seed/headshot1/240/240',
+    imageHint: 'professional headshot',
+  };
+
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
-      <section className="text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Building Resilient Systems
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          I'm a systems engineer passionate about designing, building, and
-          scaling complex software systems. My philosophy is rooted in
-          pragmatism, collaboration, and a relentless pursuit of improvement.
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
-          >
-            <Link href="/explore">
-              Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link href="/collaboration">Collaboration Philosophy</Link>
-          </Button>
+      <section className="grid items-center gap-8 md:grid-cols-2 lg:gap-16">
+        <div className="space-y-6 text-center md:text-left">
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            Sunday Joseph
+          </h1>
+          <p className="text-xl text-muted-foreground md:text-2xl">
+            I build systems that scale, evolve, and collaborate.
+          </p>
+          <p className="mx-auto max-w-2xl text-muted-foreground md:mx-0">
+            Passionate about Firebase, Web (Next.js), Mobile (Flutter), and the
+            frontiers of AI.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Link href="/explore">
+                Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/collaboration">Collaboration Philosophy</Link>
+            </Button>
+          </div>
+        </div>
+        <div className="relative flex justify-center">
+          <Image
+            src={headshot.imageUrl}
+            alt="Sunday Joseph Headshot"
+            width={240}
+            height={240}
+            className="rounded-full object-cover ring-4 ring-primary/20"
+            data-ai-hint={headshot.imageHint}
+            priority
+          />
         </div>
       </section>
 
