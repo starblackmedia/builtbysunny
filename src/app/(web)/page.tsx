@@ -16,7 +16,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const skills = [
   {
@@ -58,11 +57,6 @@ const skills = [
 ];
 
 export default function Home() {
-  const headshot = PlaceHolderImages.find((p) => p.id === 'headshot') || {
-    imageUrl: 'https://picsum.photos/seed/headshot1/240/240',
-    imageHint: 'professional headshot',
-  };
-
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <section className="grid items-center gap-8 md:grid-cols-2 lg:gap-16">
@@ -94,12 +88,11 @@ export default function Home() {
         </div>
         <div className="relative flex justify-center">
           <Image
-            src={headshot.imageUrl}
+            src="/images/SundayJoseph-1.JPG"
             alt="Sunday Joseph Headshot"
             width={240}
             height={240}
             className="rounded-full object-cover ring-4 ring-primary/20"
-            data-ai-hint={headshot.imageHint}
             priority
           />
         </div>
