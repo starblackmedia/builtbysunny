@@ -1,126 +1,401 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import {
-  ArrowRight,
-  Code,
-  Cpu,
-  Database,
-  Shield,
-  GitBranch,
-  Rocket,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+'use client';
 
-const skills = [
-  {
-    icon: <Code className="h-8 w-8 text-primary" />,
-    title: 'Software Development',
-    description:
-      'Building robust and scalable applications with clean, maintainable code.',
-  },
-  {
-    icon: <Cpu className="h-8 w-8 text-primary" />,
-    title: 'System Architecture',
-    description:
-      'Designing resilient and efficient systems that meet business needs and technical requirements.',
-  },
-  {
-    icon: <Database className="h-8 w-8 text-primary" />,
-    title: 'Data Management',
-    description:
-      'Implementing data storage, processing, and retrieval solutions for high performance.',
-  },
-  {
-    icon: <Shield className="h-8 w-8 text-primary" />,
-    title: 'Security',
-    description:
-      'Integrating security best practices throughout the software development lifecycle.',
-  },
-  {
-    icon: <GitBranch className="h-8 w-8 text-primary" />,
-    title: 'Collaboration',
-    description:
-      'Working effectively in teams, fostering shared ownership and learning through code reviews.',
-  },
-  {
-    icon: <Rocket className="h-8 w-8 text-primary" />,
-    title: 'Innovation',
-    description:
-      'Experimenting with new technologies and AI-assisted tools to drive continuous improvement.',
-  },
+import { useEffect, useState, useRef } from 'react';
+import { ArrowRight, Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from 'lucide-react';
+
+const sections = [
+  { id: 'about', label: 'ABOUT' },
+  { id: 'work', label: 'WORK' },
+  { id: 'build', label: 'BUILD' },
+  { id: 'contact', label: 'CONTACT' }
 ];
 
-export default function Home() {
-  return (
-    <div className="container mx-auto px-4 py-16 sm:py-24">
-      <section className="grid items-center gap-8 md:grid-cols-2 lg:gap-16">
-        <div className="space-y-6 text-center md:text-left">
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Sunday Joseph
-          </h1>
-          <p className="text-xl text-muted-foreground md:text-2xl">
-            I build systems that scale, evolve, and collaborate.
-          </p>
-          <p className="mx-auto max-w-2xl text-muted-foreground md:mx-0">
-            Passionate about Firebase, Web (Next.js), Mobile (Flutter), and the
-            frontiers of AI.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <Link href="/explore">
-                Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/collaboration">Collaboration Philosophy</Link>
-            </Button>
-          </div>
-        </div>
-        <div className="relative flex justify-center">
-          <Image
-            src="/images/SundayJoseph-1.JPG"
-            alt="Sunday Joseph Headshot"
-            width={240}
-            height={240}
-            className="rounded-full object-cover ring-4 ring-primary/20"
-            priority
-          />
-        </div>
-      </section>
+const mainProjects = [
+  {
+    id: 'tunegrock',
+    name: 'TuneGrock',
+    category: 'Music Technology Platform',
+    description: 'A music technology platform built to help independent artists manage, distribute, and grow their careers with intelligent performance insights.',
+    role: 'Founder & Full-Stack Developer',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'AI', 'APIs', 'Payments']
+  },
+  {
+    id: 'dropkudi',
+    name: 'DropKudi',
+    category: 'Modern Gifting Platform',
+    description: 'A modern gifting platform that gives people a dedicated, secure page to receive gifts, congratulations, and support for birthdays, weddings, celebrations, and special life events.',
+    role: 'Founder & Full-Stack Developer',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'APIs', 'Payments']
+  }
+];
 
-      <section className="mt-24 sm:mt-32">
-        <h2 className="font-headline text-3xl font-bold tracking-tight text-center sm:text-4xl">
-          Core Competencies
-        </h2>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill) => (
-            <Card
-              key={skill.title}
-              className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10"
-            >
-              <CardHeader className="flex flex-row items-center gap-4">
-                {skill.icon}
-                <CardTitle className="font-headline text-xl">
-                  {skill.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{skill.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+const secondaryProjects = [
+  'Proofen',
+  'IronLockBox',
+  'Supernovaa',
+  'UnRulyMusik',
+  'Starblack Media'
+];
+
+const capabilities = [
+  {
+    num: '01',
+    title: 'Web Applications',
+    text: 'Custom enterprise platforms, real-time analytics dashboards, complex dynamic marketplaces, and automated internal operational systems.'
+  },
+  {
+    num: '02',
+    title: 'SaaS & MVPs',
+    text: 'Turning high-level startup product concepts into highly testable, fully functional launched items optimized for validation and scaling.'
+  },
+  {
+    num: '03',
+    title: 'AI Products',
+    text: 'Intelligent AI-powered applications, natural assistant agents, predictive automations, and advanced smart context logic features.'
+  },
+  {
+    num: '04',
+    title: 'Backend Systems',
+    text: 'Robust RESTful/GraphQL APIs, secure databases schemas, multi-provider auth solutions, clean payment gateway pipelines, and system architectures.'
+  }
+];
+
+const coreTech = [
+  'Next.js', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'APIs', 'Databases', 'AI Integration', 'Payments Pipeline'
+];
+
+export default function PremiumOnePagePortfolio() {
+  const [activeSection, setActiveSection] = useState('about');
+  
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '-25% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+    
+    sections.forEach(sec => {
+      const el = document.getElementById(sec.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="lg:flex lg:justify-between lg:gap-4">
+        
+        {/* LEFT COLUMN - FIXED PANEL */}
+        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
+          <div className="flex flex-col">
+            <h1 className="font-headline text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
+              SUNDAY J.
+            </h1>
+            <h2 className="mt-3 text-lg font-medium tracking-tight text-primary">
+              Full-Stack Product Developer
+            </h2>
+            <p className="mt-6 text-3xl font-light tracking-tight text-foreground/90 max-w-xs leading-tight font-headline">
+              I build <span className="text-foreground font-medium underline decoration-primary/40 underline-offset-4">digital products</span>.
+            </p>
+            <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
+              I build SaaS, web applications, AI-powered products, and digital experiences from idea to production.
+            </p>
+
+            {/* Desktop Navigation Link Indicators */}
+            <nav className="mt-16 hidden lg:block" aria-label="In-page jump links">
+              <ul className="flex flex-col gap-4 w-fit">
+                {sections.map(sec => {
+                  const isActive = activeSection === sec.id;
+                  return (
+                    <li key={sec.id}>
+                      <button
+                        onClick={() => scrollToSection(sec.id)}
+                        className="group flex items-center py-1.5 text-xs font-bold tracking-widest text-left"
+                        aria-label={`Scroll to ${sec.label}`}
+                      >
+                        <span className={`mr-4 h-px transition-all duration-300 ${
+                          isActive ? 'w-16 bg-primary' : 'w-8 bg-border group-hover:w-16 group-hover:bg-foreground'
+                        }`} />
+                        <span className={`transition-colors duration-300 ${
+                          isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'
+                        }`}>
+                          {sec.label}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+
+          {/* Socials & Location Footer Footer */}
+          <div className="mt-12 lg:mt-0 flex flex-col gap-4">
+            <div className="text-xs tracking-wide text-muted-foreground">
+              Based in Nigeria <span className="mx-1.5 text-border">·</span> Working globally
+            </div>
+            
+            <div className="flex items-center gap-5 text-muted-foreground" aria-label="Social media channels">
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="hover:text-primary transition-colors py-1"
+                title="GitHub Portfolio (TODO: Add link)"
+              >
+                <span className="sr-only">GitHub</span>
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="hover:text-primary transition-colors py-1"
+                title="LinkedIn Profile (TODO: Add link)"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="mailto:contact@example.com" 
+                className="hover:text-primary transition-colors py-1"
+                title="Direct Email Address (TODO: Add personal email)"
+              >
+                <span className="sr-only">Email</span>
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/40 font-mono">
+              // TODO: replace mock URLs in deployment
+            </span>
+          </div>
+        </header>
+
+        {/* RIGHT COLUMN - SCROLLABLE MAIN CONTENT CANVAS */}
+        <main className="pt-24 lg:w-[56%] lg:py-24 flex flex-col gap-24 md:gap-36">
+          
+          {/* 01 — ABOUT */}
+          <section id="about" className="scroll-mt-24" aria-label="About Sunday">
+            <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+              <h2 className="text-xs font-bold tracking-widest text-primary lg:sr-only uppercase">
+                01 — About
+              </h2>
+            </div>
+            <div className="space-y-5 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                I'm Sunday, a full-stack product developer focused on turning premium ideas into functional digital systems. I operate comfortably across interface development, robust architecture pipelines, AI prompts orchestration, databases, and secure payment setups.
+              </p>
+              <p>
+                My work stands at the intersection of business logic and clean engineering. I build tools that are optimized for actual utility, scalable structure, and clarity, avoiding fragile prototypes or superficial mockups.
+              </p>
+              <p className="text-foreground/90 font-medium pt-2">
+                Let's move your product concept from discovery straight into production.
+              </p>
+            </div>
+          </section>
+
+          {/* 02 — WORK */}
+          <section id="work" className="scroll-mt-24" aria-label="Selected products built by Sunday">
+            <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+              <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
+                02 — Selected Work
+              </h2>
+              <p className="mt-1 text-xs text-muted-foreground">A few products I've designed and built from scratch.</p>
+            </div>
+
+            {/* Case Studies */}
+            <div className="mt-12 space-y-16">
+              {mainProjects.map((project, idx) => (
+                <article key={project.id} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-mono tracking-widest text-primary uppercase">
+                      PROJECT 0{idx + 1} &mdash; {project.category}
+                    </span>
+                    <div className="flex items-center justify-between group-hover:text-primary transition-colors">
+                      <h3 className="font-headline text-2xl font-medium tracking-tight text-foreground">
+                        {project.name}
+                      </h3>
+                      <ArrowUpRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    </div>
+                    <p className="text-xs text-muted-foreground/80 italic">
+                      Role: {project.role}
+                    </p>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Polished Visual Area Placeholder Block */}
+                  <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 flex flex-col items-center justify-center p-6 text-center group-hover:border-primary/20 transition-colors">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <span className="text-xs font-mono tracking-wider text-muted-foreground/60 mb-1">
+                      [ {project.name} Interface Asset Area ]
+                    </span>
+                    <span className="text-[10px] text-primary/70 font-mono">
+                      {`/* TODO: Insert production portfolio snapshot */`}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {project.technologies.map(tech => (
+                      <span 
+                        key={tech} 
+                        className="rounded bg-secondary/80 border border-border/60 px-2 py-0.5 text-[11px] font-mono tracking-tight text-foreground/80"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* More things I've built section */}
+            <div className="mt-20 pt-8 border-t border-border">
+              <h3 className="text-sm font-semibold tracking-wide text-foreground uppercase">
+                More things I've built
+              </h3>
+              <p className="text-xs text-muted-foreground mt-1 mb-6">Understated production products, architecture frameworks and libraries.</p>
+              
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" aria-label="Additional projects log">
+                {secondaryProjects.map(proj => (
+                  <li 
+                    key={proj} 
+                    className="group flex items-center justify-between p-3 rounded bg-card/40 border border-border/50 hover:border-border transition-all"
+                  >
+                    <span className="text-sm font-medium tracking-tight text-muted-foreground group-hover:text-foreground transition-colors">
+                      {proj}
+                    </span>
+                    <span className="text-[10px] font-mono text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
+                      Case study pending
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* 03 — BUILD */}
+          <section id="build" className="scroll-mt-24" aria-label="Sunday's production capabilities">
+            <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+              <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
+                03 — From idea to product
+              </h2>
+              <p className="mt-1 text-xs text-muted-foreground">High-fidelity core specializations and product capability matrix.</p>
+            </div>
+
+            <div className="mt-12 space-y-8">
+              {capabilities.map(cap => (
+                <div key={cap.num} className="group relative flex gap-4 border-l border-border hover:border-primary pl-4 transition-colors">
+                  <div className="flex flex-col">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xs font-mono text-primary font-bold">{cap.num}</span>
+                      <h3 className="font-headline text-lg font-medium text-foreground tracking-tight">
+                        {cap.title}
+                      </h3>
+                    </div>
+                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                      {cap.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Core horizontal typography lists for skills */}
+            <div className="mt-16 pt-8 border-t border-border">
+              <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-bold mb-4">
+                Validated Engineering Stack
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {coreTech.map(tech => (
+                  <span 
+                    key={tech}
+                    className="px-2.5 py-1 text-xs font-mono text-foreground bg-card rounded border border-border"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 04 — CONTACT */}
+          <section id="contact" className="scroll-mt-24 pb-16 lg:pb-24" aria-label="Start a conversation with Sunday">
+            <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+              <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
+                04 — Contact
+              </h2>
+            </div>
+
+            <div className="mt-8 rounded-lg bg-card border border-border p-6 md:p-8">
+              <h3 className="font-headline text-3xl font-medium tracking-tight text-foreground">
+                Have an idea worth building?
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Let's turn it into something real. Send a note if you are looking for dedicated architectural execution, technical partnership, or application expansion.
+              </p>
+
+              <div className="mt-8">
+                <a
+                  href="mailto:contact@example.com"
+                  className="inline-flex items-center gap-2 rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90 transition-colors"
+                  aria-label="Send email to start a conversation"
+                >
+                  Start a conversation <ArrowRight className="h-3 w-3" />
+                </a>
+              </div>
+
+              {/* Placeholder Directory Links */}
+              <div className="mt-8 pt-6 border-t border-border/60 grid grid-cols-2 gap-4 text-xs">
+                <div>
+                  <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Direct Outreach</span>
+                  <a href="mailto:contact@example.com" className="text-foreground hover:text-primary transition-colors block font-mono">Email Placeholder</a>
+                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">WhatsApp Placeholder</a>
+                </div>
+                <div>
+                  <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Professional Logs</span>
+                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">LinkedIn Connect</a>
+                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">GitHub Repositories</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Sophisticated Footer */}
+            <footer className="mt-24 pt-8 border-t border-border/40 text-xs text-muted-foreground/60 flex flex-col sm:flex-row sm:justify-between gap-4 font-mono">
+              <div>
+                <span className="block text-foreground font-bold tracking-tight">SUNDAY J.</span>
+                <span>Full-Stack Product Developer</span>
+              </div>
+              <div className="sm:text-right">
+                <span>Nigeria · Working globally</span>
+                <span className="block mt-0.5 text-[10px] text-muted-foreground/40">&copy; 2026 Sunday J. All rights reserved.</span>
+              </div>
+            </footer>
+          </section>
+
+        </main>
+
+      </div>
     </div>
   );
 }
