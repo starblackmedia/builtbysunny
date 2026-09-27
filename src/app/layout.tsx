@@ -3,8 +3,13 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Systems Engineer Portfolio',
-  description: 'A portfolio showcasing systems engineering skills and projects.',
+  title: 'Sunday J. — Full-Stack Product Developer',
+  description: 'Sunday J. is a full-stack product developer building SaaS, web applications, AI-powered products, and digital systems from idea to production.',
+  openGraph: {
+    title: 'Sunday J. — Full-Stack Product Developer',
+    description: 'Building SaaS, web applications, AI-powered products, and digital systems from idea to production.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

@@ -23,29 +23,39 @@ export default function PremiumOnePagePortfolio() {
     
     if (typeof window === 'undefined') return;
 
-    const options = {
-      root: null,
-      rootMargin: '-15% 0px -45% 0px',
-      threshold: [0, 0.05, 0.1]
-    };
+    const handleScroll = () => {
+      let currentSection = 'about';
+      let maxVisibleHeight = 0;
 
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      // Find the entry that is currently most intersecting or visible
-      const intersectingEntries = entries.filter(entry => entry.isIntersecting);
-      if (intersectingEntries.length > 0) {
-        // Default to the first visible one detected in the threshold area
-        setActiveSection(intersectingEntries[0].target.id);
+      sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Calculate the visible portion of the section in the viewport window
+          const visibleTop = Math.max(0, rect.top);
+          const visibleBottom = Math.min(window.innerHeight, rect.bottom);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+          if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            currentSection = sec.id;
+          }
+        }
+      });
+
+      // Special fallback case: if we are near the very bottom, prioritize contact section
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        currentSection = 'contact';
       }
+
+      setActiveSection(currentSection);
     };
 
-    const observer = new IntersectionObserver(handleIntersection, options);
-    
-    sections.forEach(sec => {
-      const el = document.getElementById(sec.id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial check
+    setTimeout(handleScroll, 100);
 
-    return () => observer.disconnect();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface IdentityPanelProps {
@@ -15,9 +15,9 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col">
         <div className="flex flex-col gap-6 mb-8">
-          <div className="relative w-full aspect-[4/5] max-w-[180px] border border-border/80 bg-muted overflow-hidden group">
+          <div className="relative w-full aspect-[4/5] max-w-[150px] border border-border/80 bg-muted overflow-hidden group">
             <div className="absolute top-2 left-2 z-10 font-mono text-[9px] tracking-widest text-foreground/40 bg-background/60 backdrop-blur-sm px-1.5 py-0.5">
-              SPEC_01
+              01
             </div>
             <div className="absolute bottom-2 right-2 z-10 font-mono text-[9px] tracking-widest text-foreground/40 bg-background/60 backdrop-blur-sm px-1.5 py-0.5">
               SUNDAY J.
@@ -43,7 +43,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
         <p className="text-3xl font-light tracking-tight text-foreground/90 max-w-xs leading-tight font-headline">
           I build <span className="text-foreground font-medium underline decoration-primary/40 underline-offset-4">digital products</span>.
         </p>
-        <p className="mt-6 max-w-sm text-base text-muted-foreground leading-relaxed">
+        <p className="mt-6 max-w-sm text-base text-muted-foreground/90 leading-relaxed md:text-[17px]">
           I build SaaS, web applications, AI-powered products, and digital experiences from idea to production.
         </p>
 
@@ -83,16 +83,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
         
         <div className="flex items-center gap-5 text-muted-foreground" aria-label="Social media">
           <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-primary transition-colors"
-            title="GitHub"
-          >
-            <Github className="h-5 w-5" />
-          </a>
-          <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/builtbysunny/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hover:text-primary transition-colors"
@@ -101,7 +92,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
             <Linkedin className="h-5 w-5" />
           </a>
           <a 
-            href="mailto:contact@sundayj.com" 
+            href="mailto:builtbysunny@starblackmedia.com" 
             className="hover:text-primary transition-colors"
             title="Email"
           >

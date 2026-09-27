@@ -11,13 +11,13 @@ export function ContactSection() {
         <h3 className="font-headline text-3xl font-medium tracking-tight text-foreground">
           Have an idea worth building?
         </h3>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+        <p className="mt-2 text-sm text-muted-foreground/90 leading-relaxed md:text-[15px]">
           Let's turn it into something real. Send a note if you are looking for dedicated architectural execution, technical partnership, or application expansion.
         </p>
 
         <div className="mt-8">
           <a 
-            href="mailto:contact@sundayj.com"
+            href="mailto:builtbysunny@starblackmedia.com"
             className="inline-flex items-center gap-2 rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
           >
             Start a conversation &rarr;
@@ -27,13 +27,11 @@ export function ContactSection() {
         <div className="mt-8 pt-6 border-t border-border/60 grid grid-cols-2 gap-4 text-xs">
           <div>
             <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Direct Outreach</span>
-            <a href="https://wa.me/yournumber" className="text-foreground hover:text-primary transition-colors block font-mono">WhatsApp</a>
-            <a href="mailto:contact@sundayj.com" className="text-foreground hover:text-primary transition-colors block font-mono">Email</a>
+            <a href="mailto:builtbysunny@starblackmedia.com" className="text-foreground hover:text-primary transition-colors block font-mono">Email Direct</a>
           </div>
           <div>
             <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Professional Logs</span>
-            <a href="https://linkedin.com" className="text-foreground hover:text-primary transition-colors block font-mono">LinkedIn</a>
-            <a href="https://github.com" className="text-foreground hover:text-primary transition-colors block font-mono">GitHub</a>
+            <a href="https://www.linkedin.com/in/builtbysunny/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors block font-mono">LinkedIn Profile</a>
           </div>
         </div>
       </div>
@@ -44,7 +42,7 @@ export function ContactSection() {
           <span>Full-Stack Product Developer</span>
         </div>
         <div className="sm:text-right">
-          <span>Nigeria · Working globally</span>
+          <span>Lagos, Nigeria · Working globally</span>
           <span className="block mt-0.5 text-[10px] text-muted-foreground/40">&copy; 2026 Sunday J. All rights reserved.</span>
         </div>
       </footer>
