@@ -30,11 +30,10 @@ export default function PremiumOnePagePortfolio() {
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+      const intersectingEntries = entries.filter(entry => entry.isIntersecting);
+      if (intersectingEntries.length > 0) {
+        setActiveSection(intersectingEntries[0].target.id);
+      }
     };
 
     const observer = new IntersectionObserver(handleIntersection, options);
@@ -51,6 +50,7 @@ export default function PremiumOnePagePortfolio() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
     }
   };
 
