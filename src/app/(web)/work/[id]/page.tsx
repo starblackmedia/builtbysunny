@@ -123,7 +123,8 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </section>
 
-        <div className="space-y-16 py-8 border-b border-border/40 pb-16">
+        <div className="space-y-24 py-8 pb-16">
+          {/* PROBLEM SPACE */}
           <div className="grid md:grid-cols-3 md:gap-8 items-start">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
@@ -135,7 +136,52 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 md:gap-8 items-start">
+          {/* DROPKUDI ASYMMETRIC INSERTION 1 */}
+          {id === 'dropkudi' && (
+            <section className="grid grid-cols-1 md:grid-cols-12 gap-8 my-16 items-end">
+              <div className="md:col-span-8 relative aspect-[16/10] overflow-hidden rounded border border-border bg-card">
+                <Image
+                  src="/images/dropkudi/desktop-profile.JPG"
+                  alt="DropKudi Live User Profile Hub Screen"
+                  fill
+                  className="object-cover opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="md:col-span-4 relative aspect-[9/16] overflow-hidden rounded border border-border bg-card max-w-[260px] mx-auto md:mx-0 w-full md:-translate-y-12">
+                <Image
+                  src="/images/dropkudi/mobile-userprofile.jpg"
+                  alt="DropKudi Personalized Recipient Layout View"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* TUNEGROCK ASYMMETRIC INSERTION 1 */}
+          {id === 'tunegrock' && (
+            <section className="grid grid-cols-1 md:grid-cols-12 gap-8 my-16 items-start">
+              <div className="md:col-span-7 relative aspect-[16/10] overflow-hidden rounded border border-border bg-card">
+                <Image
+                  src="/images/tunegrock/desktop-tune-home.JPG"
+                  alt="TuneGrock Administrative Engineering Dashboard Portal Layout"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+              <div className="md:col-span-5 relative aspect-[9/16] overflow-hidden rounded border border-border bg-card max-w-[240px] mx-auto w-full md:translate-y-16">
+                <Image
+                  src="/images/tunegrock/tunereal-mobile-home.jpg"
+                  alt="TuneGrock Mobile Audio Client Portal View"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* DESIGN APPROACH */}
+          <div className="grid md:grid-cols-3 md:gap-8 items-start border-t border-border/40 pt-16">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
                 <Layers className="h-3.5 w-3.5 text-primary" /> Design Approach
@@ -146,7 +192,72 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 md:gap-8 items-start">
+          {/* DROPKUDI ASYMMETRIC INSERTION 2 */}
+          {id === 'dropkudi' && (
+            <section className="grid grid-cols-1 md:grid-cols-12 gap-8 my-16 items-center">
+              <div className="md:col-span-4 relative aspect-[9/16] overflow-hidden rounded border border-border bg-card max-w-[260px] mx-auto w-full">
+                <Image
+                  src="/images/dropkudi/dropkudi-widraw-mobile.jpg"
+                  alt="DropKudi High-Speed Escrow Payout Settlement Layout"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+              <div className="md:col-span-8 relative aspect-[16/10] overflow-hidden rounded border border-border bg-card md:translate-x-4">
+                <Image
+                  src="/images/dropkudi/desktop-wallet.JPG"
+                  alt="DropKudi Financial Ledger Transaction History"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* TUNEGROCK ASYMMETRIC INSERTION 2 */}
+          {id === 'tunegrock' && (
+            <section className="space-y-12 my-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative aspect-[16/10] overflow-hidden rounded border border-border bg-card">
+                  <Image
+                    src="/images/tunegrock/desk-artistprofile.JPG"
+                    alt="TuneGrock Advanced Analytical Metrics Stream Matrix"
+                    fill
+                    className="object-cover opacity-90"
+                  />
+                </div>
+                <div className="relative aspect-[16/10] overflow-hidden rounded border border-border bg-card">
+                  <Image
+                    src="/images/tunegrock/desktupload.JPG"
+                    alt="TuneGrock Decentralized High-Throughput Track Ingestion Workspace"
+                    fill
+                    className="object-cover opacity-90"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div className="relative aspect-[9/16] overflow-hidden rounded border border-border bg-card">
+                  <Image
+                    src="/images/tunegrock/tunereal-mobile-artistprofile.jpg"
+                    alt="TuneGrock Mobile Insights Interface"
+                    fill
+                    className="object-cover opacity-90"
+                  />
+                </div>
+                <div className="relative aspect-[9/16] overflow-hidden rounded border border-border bg-card">
+                  <Image
+                    src="/images/tunegrock/tunereal-mobile-dash.jpg"
+                    alt="TuneGrock Mobile Ledger View"
+                    fill
+                    className="object-cover opacity-90"
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* SYSTEM TRADEOFFS */}
+          <div className="grid md:grid-cols-3 md:gap-8 items-start border-t border-border/40 pt-16">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
                 <Cpu className="h-3.5 w-3.5 text-primary" /> System Tradeoffs
@@ -157,7 +268,43 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 md:gap-8 items-start">
+          {/* FINAL AD-HOC ASYMMETRIC OUTRO PICKS */}
+          {id === 'dropkudi' && (
+            <section className="flex justify-center my-12">
+              <div className="w-full max-w-md relative aspect-[9/16] overflow-hidden rounded border border-border bg-card">
+                <Image
+                  src="/images/dropkudi/mobile1-dash.jpg"
+                  alt="DropKudi Native Mobile Dashboard View"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+            </section>
+          )}
+
+          {id === 'tunegrock' && (
+            <section className="grid grid-cols-1 md:grid-cols-12 gap-8 my-12 items-center">
+              <div className="md:col-span-8 relative aspect-[16/10] overflow-hidden rounded border border-border bg-card">
+                <Image
+                  src="/images/tunegrock/desktop-nowplaying.JPG"
+                  alt="TuneGrock Immersive Realtime Streaming Player Frame"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+              <div className="md:col-span-4 relative aspect-[9/16] overflow-hidden rounded border border-border bg-card max-w-[220px] mx-auto w-full">
+                <Image
+                  src="/images/tunegrock/tunereal-mobile-nowplaying.jpg"
+                  alt="TuneGrock Mobile Embedded Audio Core Controller UI"
+                  fill
+                  className="object-cover opacity-90"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* VALIDATED TECH STACK */}
+          <div className="grid md:grid-cols-3 md:gap-8 items-start border-t border-border/40 pt-16">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground mb-4 md:mb-0">
                 Validated Tech Stack
@@ -178,10 +325,10 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </div>
 
-        <footer className="mt-16 flex items-center justify-between font-mono text-xs text-muted-foreground">
+        <footer className="mt-16 flex items-center justify-between font-mono text-xs text-muted-foreground border-t border-border/40 pt-12">
           <Link
             href={`/work/${prevStudy.id}`}
-            className="group flex items-center gap-2 max-w-[45%] text-left hover:text-foreground transition-colors animate-gpu"
+            className="group flex items-center gap-2 max-w-[45%] text-left hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-3 w-3 group-hover:-translate-x-1 transition-transform shrink-0" />
             <div className="truncate">
@@ -194,7 +341,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
           <Link
             href={`/work/${nextStudy.id}`}
-            className="group flex items-center gap-2 max-w-[45%] text-right hover:text-foreground transition-colors justify-end animate-gpu"
+            className="group flex items-center gap-2 max-w-[45%] text-right hover:text-foreground transition-colors justify-end"
           >
             <div className="truncate text-right">
               <span className="block text-[10px] text-muted-foreground/40 uppercase tracking-widest">Next Spec</span>
