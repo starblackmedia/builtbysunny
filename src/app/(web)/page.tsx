@@ -38,7 +38,7 @@ const mainProjects = [
     category: 'Product Verification Tool',
     description: 'An advanced cryptographic digital ledger solution for certifying asset authenticity and tracing item lifecycles seamlessly.',
     role: 'Full-Stack Developer',
-    technologies: ['Next.js', 'TypeScript', 'Cryptography', 'Node.js'],
+    technologies: ['Next.js', 'TypeScript', 'Cryptography', 'Node.js', 'AI'],
     liveUrl: 'https://useprofeen.com'
   },
   {
@@ -47,7 +47,7 @@ const mainProjects = [
     category: 'Secure Storage Vault',
     description: 'A high-security encrypted cloud storage repository built for safeguarding operational config secrets and server credential protocols.',
     role: 'Backend Architect',
-    technologies: ['Node.js', 'Security Layers', 'Databases', 'TypeScript'],
+    technologies: ['Flutter', 'Security Layers', 'Databases', 'Dart'],
     liveUrl: 'https://app.ironlockbox.com'
   },
   {
@@ -94,7 +94,7 @@ const capabilities = [
 ];
 
 const coreTech = [
-  'Next.js', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'APIs', 'Databases', 'AI Integration', 'Payments Pipeline'
+  'Next.js', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'APIs', 'Databases', 'AI Integration', 'Payments Pipeline', 'Flutter', 'Dart'
 ];
 
 export default function PremiumOnePagePortfolio() {

@@ -10,6 +10,12 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+export async function generateStaticParams() {
+  return Object.keys(caseStudiesData).map((id) => ({
+    id: id,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const study = caseStudiesData[id];
@@ -110,7 +116,8 @@ export default async function CaseStudyPage({ params }: Props) {
             <Image
               src={activeImage.imageUrl}
               alt={study.name}
-              fill
+              width={1200}
+              height={675}
               priority
               className="object-cover transition-transform duration-500 hover:scale-[1.01]"
               data-ai-hint={activeImage.imageHint}
