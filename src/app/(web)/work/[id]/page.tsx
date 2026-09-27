@@ -36,13 +36,11 @@ export default async function CaseStudyPage({ params }: Props) {
     notFound();
   }
 
-  // Look up relevant placeholder image metrics
   const activeImage = PlaceHolderImages.find((p) => p.id === study.placeholderImageId) || {
-    imageUrl: 'https://picsum.photos/seed/genericcs/1200/675',
+    imageUrl: '/images/placeholder.JPG',
     imageHint: 'system schema architecture layout'
   };
 
-  // Setup predictable previous/next lookup arrays
   const keys = Object.keys(caseStudiesData);
   const currentIndex = keys.indexOf(id);
   const prevId = keys[(currentIndex - 1 + keys.length) % keys.length];
@@ -52,11 +50,9 @@ export default async function CaseStudyPage({ params }: Props) {
   const nextStudy = caseStudiesData[nextId];
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary selection:font-bold">
-      {/* Content Outer Wrapper */}
+    <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
       <div className="mx-auto max-w-4xl px-6 py-12 md:py-24">
         
-        {/* Navigation Headcrumbs */}
         <div className="mb-12">
           <Link
             href="/"
@@ -67,7 +63,6 @@ export default async function CaseStudyPage({ params }: Props) {
           </Link>
         </div>
 
-        {/* HERO TITLE BLOCK */}
         <header className="border-b border-border/60 pb-12">
           <div className="flex flex-col gap-2">
             <span className="text-xs font-mono tracking-widest text-primary uppercase">
@@ -81,7 +76,6 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Quick Specifications Metadata Grid */}
           <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4 border-t border-border/40 pt-8 text-xs font-mono">
             <div>
               <span className="block text-muted-foreground/60 uppercase tracking-wider text-[10px] mb-1">My Contribution</span>
@@ -95,6 +89,8 @@ export default async function CaseStudyPage({ params }: Props) {
               <span className="block text-muted-foreground/60 uppercase tracking-wider text-[10px] mb-1">Live Endpoint</span>
               <a
                 href={study.liveUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="text-primary hover:underline inline-flex items-center gap-1 group"
               >
                 Production Hub <ExternalLink className="h-2.5 w-2.5 opacity-60 group-hover:opacity-100" />
@@ -103,14 +99,13 @@ export default async function CaseStudyPage({ params }: Props) {
             <div>
               <span className="block text-muted-foreground/60 uppercase tracking-wider text-[10px] mb-1">System Status</span>
               <span className="inline-flex items-center gap-1.5 text-foreground/90 font-medium">
-                <span className={`h-1.5 w-1.5 rounded-full ${study.hasFullContent ? 'bg-primary' : 'bg-orange-500'}`} />
-                {study.hasFullContent ? 'Active Node' : 'Compiling Log'}
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                Active Node
               </span>
             </div>
           </div>
         </header>
 
-        {/* COMPREHENSIVE INTERFACE/ARCHITECTURE VISUAL BLOCK */}
         <section className="my-16">
           <div className="relative aspect-video w-full overflow-hidden rounded border border-border bg-card">
             <Image
@@ -119,7 +114,7 @@ export default async function CaseStudyPage({ params }: Props) {
               width={1200}
               height={675}
               priority
-              className="object-cover transition-transform duration-500 hover:scale-[1.01]"
+              className="object-cover"
               data-ai-hint={activeImage.imageHint}
             />
             <div className="absolute bottom-4 right-4 rounded bg-background/90 border border-border/80 px-2 py-1 text-[10px] font-mono text-muted-foreground tracking-tight backdrop-blur-sm">
@@ -128,10 +123,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </section>
 
-        {/* EDITORIAL REUNIFICATION CANVAS */}
         <div className="space-y-16 py-8 border-b border-border/40 pb-16">
-          
-          {/* THE CHALLENGE STATEMENT */}
           <div className="grid md:grid-cols-3 md:gap-8 items-start">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
@@ -143,7 +135,6 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* DESIGN APPROACH / ARCHITECTURE SOLUTION */}
           <div className="grid md:grid-cols-3 md:gap-8 items-start">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
@@ -155,7 +146,6 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* ENGINEERING TRADEOFFS & FAILURE ADMISSIONS */}
           <div className="grid md:grid-cols-3 md:gap-8 items-start">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-2 mb-4 md:mb-0">
@@ -167,7 +157,6 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* CONSTRAINED TECHNOLOGY CHIPS SECTION */}
           <div className="grid md:grid-cols-3 md:gap-8 items-start">
             <div className="md:col-span-1">
               <h2 className="text-xs font-bold uppercase tracking-widest text-foreground mb-4 md:mb-0">
@@ -187,14 +176,12 @@ export default async function CaseStudyPage({ params }: Props) {
               </div>
             </div>
           </div>
-
         </div>
 
-        {/* BOTTOM STEPPED CAROUSEL NAVIGATION */}
         <footer className="mt-16 flex items-center justify-between font-mono text-xs text-muted-foreground">
           <Link
             href={`/work/${prevStudy.id}`}
-            className="group flex items-center gap-2 max-w-[45%] text-left hover:text-foreground transition-colors"
+            className="group flex items-center gap-2 max-w-[45%] text-left hover:text-foreground transition-colors animate-gpu"
           >
             <ArrowLeft className="h-3 w-3 group-hover:-translate-x-1 transition-transform shrink-0" />
             <div className="truncate">
@@ -207,7 +194,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
           <Link
             href={`/work/${nextStudy.id}`}
-            className="group flex items-center gap-2 max-w-[45%] text-right hover:text-foreground transition-colors justify-end"
+            className="group flex items-center gap-2 max-w-[45%] text-right hover:text-foreground transition-colors justify-end animate-gpu"
           >
             <div className="truncate text-right">
               <span className="block text-[10px] text-muted-foreground/40 uppercase tracking-widest">Next Spec</span>

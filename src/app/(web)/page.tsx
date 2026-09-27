@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const sections = [
   { id: 'about', label: 'ABOUT' },
@@ -21,7 +20,8 @@ const mainProjects = [
     description: 'A music technology platform built to help independent artists manage, distribute, and grow their careers with intelligent performance insights.',
     role: 'Founder & Full-Stack Developer',
     technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'AI', 'APIs', 'Payments'],
-    liveUrl: 'https://tunegrock.com'
+    liveUrl: 'https://tunegrock.com',
+    imageUrl: '/images/tunegrock.JPG'
   },
   {
     id: 'dropkudi',
@@ -30,7 +30,8 @@ const mainProjects = [
     description: 'A modern gifting platform that gives people a dedicated, secure page to receive gifts, congratulations, and support for birthdays, weddings, celebrations, and special life events.',
     role: 'Founder & Full-Stack Developer',
     technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'APIs', 'Payments'],
-    liveUrl: 'https://dropkudi.com'
+    liveUrl: 'https://dropkudi.com',
+    imageUrl: '/images/dropkudi.JPG'
   },
   {
     id: 'proofen',
@@ -39,7 +40,8 @@ const mainProjects = [
     description: 'An advanced cryptographic digital ledger solution for certifying asset authenticity and tracing item lifecycles seamlessly.',
     role: 'Full-Stack Developer',
     technologies: ['Next.js', 'TypeScript', 'Cryptography', 'Node.js', 'AI'],
-    liveUrl: 'https://useprofeen.com'
+    liveUrl: 'https://useprofeen.com',
+    imageUrl: '/images/proofen.JPG'
   },
   {
     id: 'ironlockbox',
@@ -48,7 +50,8 @@ const mainProjects = [
     description: 'A high-security encrypted cloud storage repository built for safeguarding operational config secrets and server credential protocols.',
     role: 'Backend Architect',
     technologies: ['Flutter', 'Security Layers', 'Databases', 'Dart'],
-    liveUrl: 'https://app.ironlockbox.com'
+    liveUrl: 'https://app.ironlockbox.com',
+    imageUrl: '/images/ironlockbox.JPG'
   },
   {
     id: 'starblackmedia',
@@ -57,7 +60,8 @@ const mainProjects = [
     description: 'High-throughput automated asset distribution network for heavy broadcast pipelines and asynchronous rendering pipelines.',
     role: 'Lead Full-Stack Architect',
     technologies: ['Next.js', 'Cloud Compute', 'APIs'],
-    liveUrl: 'https://starblackmedia.com'
+    liveUrl: 'https://starblackmedia.com',
+    imageUrl: '/images/starblackmedia.JPG'
   },
   {
     id: 'pureprestige',
@@ -66,7 +70,8 @@ const mainProjects = [
     description: 'Bespoke client management solution crafted for ultra-high-end luxury brands featuring atomic presentation components.',
     role: 'Lead Product Developer',
     technologies: ['React', 'TypeScript', 'Tailwind'],
-    liveUrl: 'https://purprestige.com'
+    liveUrl: 'https://purprestige.com',
+    imageUrl: '/images/pureprestige.JPG'
   }
 ];
 
@@ -145,16 +150,16 @@ export default function PremiumOnePagePortfolio() {
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-4">
         
-        {/* LEFT COLUMN - FIXED PANEL */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col">
             <div className="flex items-center gap-6 mb-8">
-              <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-primary/20 bg-muted">
+              <div className="relative h-20 w-20 overflow-hidden rounded-full border border-border bg-muted">
                 <Image
                   src="/images/SundayJoseph-1.JPG"
                   alt="Sunday Joseph"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
               <div>
@@ -162,7 +167,7 @@ export default function PremiumOnePagePortfolio() {
                   SUNDAY J.
                 </h1>
                 <h2 className="mt-1 text-sm font-medium tracking-tight text-primary uppercase">
-                  Product Developer
+                  Full-Stack Product Developer
                 </h2>
               </div>
             </div>
@@ -207,42 +212,18 @@ export default function PremiumOnePagePortfolio() {
             </div>
             
             <div className="flex items-center gap-5 text-muted-foreground" aria-label="Social media channels">
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="hover:text-primary transition-colors py-1"
-                title="GitHub Portfolio"
-              >
-                <span className="sr-only">GitHub</span>
-                <Github className="h-5 w-5" />
-              </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="hover:text-primary transition-colors py-1"
-                title="LinkedIn Profile"
-              >
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a 
-                href="mailto:contact@example.com" 
-                className="hover:text-primary transition-colors py-1"
-                title="Direct Email Address"
-              >
-                <span className="sr-only">Email</span>
-                <Mail className="h-5 w-5" />
-              </a>
+              <span className="text-xs font-mono">// TODO: Add personal profile anchors</span>
+              <div className="flex gap-4">
+                <span className="hover:text-primary transition-colors text-xs font-mono cursor-pointer">GitHub</span>
+                <span className="hover:text-primary transition-colors text-xs font-mono cursor-pointer">LinkedIn</span>
+                <span className="hover:text-primary transition-colors text-xs font-mono cursor-pointer">Email</span>
+              </div>
             </div>
           </div>
         </header>
 
-        {/* RIGHT COLUMN - SCROLLABLE MAIN CONTENT CANVAS */}
         <main className="pt-24 lg:w-[56%] lg:py-24 flex flex-col gap-24 md:gap-36">
           
-          {/* 01 — ABOUT */}
           <section id="about" className="scroll-mt-24" aria-label="About Sunday">
             <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
               <h2 className="text-xs font-bold tracking-widest text-primary lg:sr-only uppercase">
@@ -262,7 +243,6 @@ export default function PremiumOnePagePortfolio() {
             </div>
           </section>
 
-          {/* 02 — WORK */}
           <section id="work" className="scroll-mt-24" aria-label="Selected products built by Sunday">
             <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
               <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
@@ -273,11 +253,6 @@ export default function PremiumOnePagePortfolio() {
 
             <div className="mt-12 space-y-16">
               {mainProjects.map((project, idx) => {
-                const projectImage = PlaceHolderImages.find(p => p.id === `cs-${project.id}`) || {
-                  imageUrl: '/images/placeholder.JPG',
-                  imageHint: 'product preview'
-                };
-
                 return (
                   <Link key={project.id} href={`/work/${project.id}`} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all block">
                     <div className="flex flex-col gap-2">
@@ -301,11 +276,10 @@ export default function PremiumOnePagePortfolio() {
 
                     <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 group-hover:border-primary/30 transition-colors">
                       <Image 
-                        src={projectImage.imageUrl}
+                        src={project.imageUrl}
                         alt={`${project.name} Screenshot`}
                         fill
                         className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500"
-                        data-ai-hint={projectImage.imageHint}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
                     </div>
@@ -326,7 +300,6 @@ export default function PremiumOnePagePortfolio() {
             </div>
           </section>
 
-          {/* 03 — BUILD */}
           <section id="build" className="scroll-mt-24" aria-label="Sunday's production capabilities">
             <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
               <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
@@ -370,7 +343,6 @@ export default function PremiumOnePagePortfolio() {
             </div>
           </section>
 
-          {/* 04 — CONTACT */}
           <section id="contact" className="scroll-mt-24 pb-16 lg:pb-24" aria-label="Start a conversation with Sunday">
             <div className="sticky top-0 z-20 -mx-6 bg-background/80 px-6 py-5 backdrop-blur-sm lg:relative lg:top-auto lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
               <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
@@ -387,25 +359,21 @@ export default function PremiumOnePagePortfolio() {
               </p>
 
               <div className="mt-8">
-                <a
-                  href="mailto:contact@example.com"
-                  className="inline-flex items-center gap-2 rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90 transition-colors"
-                  aria-label="Send email to start a conversation"
-                >
-                  Start a conversation <ArrowRight className="h-3 w-3" />
-                </a>
+                <span className="inline-flex items-center gap-2 rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer">
+                  Start a conversation &rarr;
+                </span>
               </div>
 
               <div className="mt-8 pt-6 border-t border-border/60 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Direct Outreach</span>
-                  <a href="mailto:contact@example.com" className="text-foreground hover:text-primary transition-colors block font-mono">Email Placeholder</a>
-                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">WhatsApp Placeholder</a>
+                  <span className="text-foreground hover:text-primary transition-colors block font-mono cursor-pointer">// TODO: Add WhatsApp Link</span>
+                  <span className="text-foreground hover:text-primary transition-colors block font-mono cursor-pointer">// TODO: Add Email Link</span>
                 </div>
                 <div>
                   <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Professional Logs</span>
-                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">LinkedIn Connect</a>
-                  <a href="#" className="text-foreground hover:text-primary transition-colors block font-mono">GitHub Repositories</a>
+                  <span className="text-foreground hover:text-primary transition-colors block font-mono cursor-pointer">// TODO: Add LinkedIn Link</span>
+                  <span className="text-foreground hover:text-primary transition-colors block font-mono cursor-pointer">// TODO: Add GitHub Link</span>
                 </div>
               </div>
             </div>
