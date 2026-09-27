@@ -15,7 +15,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col">
         <div className="flex flex-col gap-6 mb-8">
-          <div className="relative w-full aspect-[4/5] max-w-[260px] border border-border/80 bg-muted overflow-hidden group">
+          <div className="relative w-full aspect-[4/5] max-w-[180px] border border-border/80 bg-muted overflow-hidden group">
             <div className="absolute top-2 left-2 z-10 font-mono text-[9px] tracking-widest text-foreground/40 bg-background/60 backdrop-blur-sm px-1.5 py-0.5">
               SPEC_01
             </div>

@@ -25,8 +25,8 @@ export default function PremiumOnePagePortfolio() {
 
     const options = {
       root: null,
-      rootMargin: '-25% 0px -60% 0px',
-      threshold: 0
+      rootMargin: '-15% 0px -45% 0px',
+      threshold: [0, 0.05, 0.1]
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
