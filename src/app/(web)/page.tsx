@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const sections = [
   { id: 'about', label: 'ABOUT' },
@@ -251,50 +253,58 @@ export default function PremiumOnePagePortfolio() {
 
             {/* Case Studies */}
             <div className="mt-12 space-y-16">
-              {mainProjects.map((project, idx) => (
-                <Link key={project.id} href={`/work/${project.id}`} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all block">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[11px] font-mono tracking-widest text-primary uppercase flex items-center gap-2">
-                      PROJECT 0{idx + 1} &mdash; {project.category} <span className="text-[10px] text-muted-foreground font-normal tracking-normal lowercase">(view architecture →)</span>
-                    </span>
-                    <div className="flex items-center justify-between group-hover:text-primary transition-colors">
-                      <h3 className="font-headline text-2xl font-medium tracking-tight text-foreground">
-                        {project.name}
-                      </h3>
-                      <ArrowUpRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                    </div>
-                    <p className="text-xs text-muted-foreground/80 italic">
-                      Role: {project.role}
-                    </p>
-                  </div>
+              {mainProjects.map((project, idx) => {
+                const projectImage = PlaceHolderImages.find(p => p.id === `cs-${project.id}`) || {
+                  imageUrl: 'https://picsum.photos/seed/generic/600/400',
+                  imageHint: 'product preview'
+                };
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Polished Visual Area Placeholder Block */}
-                  <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 flex flex-col items-center justify-center p-6 text-center group-hover:border-primary/20 transition-colors">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span className="text-xs font-mono tracking-wider text-muted-foreground/60 mb-1">
-                      [ Explore {project.name} Production Log Case Study ]
-                    </span>
-                    <span className="text-[10px] text-primary/70 font-mono">
-                      // Target domain: {project.liveUrl}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {project.technologies.map(tech => (
-                      <span 
-                        key={tech} 
-                        className="rounded bg-secondary/80 border border-border/60 px-2 py-0.5 text-[11px] font-mono tracking-tight text-foreground/80"
-                      >
-                        {tech}
+                return (
+                  <Link key={project.id} href={`/work/${project.id}`} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all block">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-[11px] font-mono tracking-widest text-primary uppercase flex items-center gap-2">
+                        PROJECT 0{idx + 1} &mdash; {project.category} <span className="text-[10px] text-muted-foreground font-normal tracking-normal lowercase">(view architecture →)</span>
                       </span>
-                    ))}
-                  </div>
-                </Link>
-              ))}
+                      <div className="flex items-center justify-between group-hover:text-primary transition-colors">
+                        <h3 className="font-headline text-2xl font-medium tracking-tight text-foreground">
+                          {project.name}
+                        </h3>
+                        <ArrowUpRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                      </div>
+                      <p className="text-xs text-muted-foreground/80 italic">
+                        Role: {project.role}
+                      </p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Premium Product Screenshot Image Frame */}
+                    <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 group-hover:border-primary/30 transition-colors">
+                      <Image 
+                        src={projectImage.imageUrl}
+                        alt={`${project.name} Screenshot`}
+                        fill
+                        className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500"
+                        data-ai-hint={projectImage.imageHint}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                    </div>
+
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {project.technologies.map(tech => (
+                        <span 
+                          key={tech} 
+                          className="rounded bg-secondary/80 border border-border/60 px-2 py-0.5 text-[11px] font-mono tracking-tight text-foreground/80"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </section>
 
