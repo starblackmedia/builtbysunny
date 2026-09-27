@@ -17,7 +17,7 @@ export function AboutSection() {
           My work sits at the intersection of product thinking and engineering. I care about how things look, how they work, and what happens underneath. The goal is simple: build digital products that feel considered, perform reliably, and are built to grow.
         </p>
         <p className="text-foreground/90 font-mono text-xs pt-2 tracking-wide uppercase">
-          // Coordinates: Lagos, Nigeria · Working globally
+        Coordinates: Lagos, Nigeria · Working globally
         </p>
       </div>
     </section>

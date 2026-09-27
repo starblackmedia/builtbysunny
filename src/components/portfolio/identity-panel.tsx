@@ -15,7 +15,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
     <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col">
         <div className="flex flex-col gap-6 mb-8">
-          <div className="relative w-full aspect-[4/5] max-w-[150px] border border-border/80 bg-muted overflow-hidden group">
+          <div className="relative w-full aspect-[4/5] max-w-[120px] border border-border/80 bg-muted overflow-hidden group">
             <div className="absolute top-2 left-2 z-10 font-mono text-[9px] tracking-widest text-foreground/40 bg-background/60 backdrop-blur-sm px-1.5 py-0.5">
               01
             </div>
@@ -35,7 +35,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
               SUNDAY J.
             </h1>
             <h2 className="mt-1.5 text-xs font-bold font-mono tracking-widest text-primary uppercase">
-              // Full-Stack Product Developer
+              Full-Stack Product Developer
             </h2>
           </div>
         </div>
@@ -43,7 +43,7 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
         <p className="text-3xl font-light tracking-tight text-foreground/90 max-w-xs leading-tight font-headline">
           I build <span className="text-foreground font-medium underline decoration-primary/40 underline-offset-4">digital products</span>.
         </p>
-        <p className="mt-6 max-w-sm text-base text-muted-foreground/90 leading-relaxed md:text-[17px]">
+        <p className="mt-6 max-w-sm text-lg text-muted-foreground/90 leading-relaxed font-body">
           I build SaaS, web applications, AI-powered products, and digital experiences from idea to production.
         </p>
 
@@ -76,7 +76,8 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
         </nav>
       </div>
 
-      <div className="mt-12 lg:mt-0 flex flex-col gap-4">
+      {/* Hidden completely on PC (lg:hidden), remains visible on mobile/tablets */}
+      <div className="mt-12 lg:mt-0 flex flex-col gap-4 lg:hidden">
         <div className="text-xs font-mono tracking-wide text-muted-foreground">
           Lagos, Nigeria <span className="mx-1.5 text-border">·</span> Working globally
         </div>
