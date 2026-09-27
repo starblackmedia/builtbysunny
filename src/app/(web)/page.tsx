@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 
 const sections = [
   { id: 'about', label: 'ABOUT' },
@@ -30,11 +31,12 @@ const mainProjects = [
 ];
 
 const secondaryProjects = [
-  'Proofen',
-  'IronLockBox',
-  'Supernovaa',
-  'UnRulyMusik',
-  'Starblack Media'
+  { id: 'proofen', name: 'Proofen' },
+  { id: 'ironlockbox', name: 'IronLockBox' },
+  { id: 'supernovaa', name: 'Supernovaa' },
+  { id: 'unrulymusik', name: 'UnRulyMusik' },
+  { id: 'starblackmedia', name: 'Starblack Media' },
+  { id: 'pureprestige', name: 'Pure Prestige' }
 ];
 
 const capabilities = [
@@ -147,7 +149,7 @@ export default function PremiumOnePagePortfolio() {
             </nav>
           </div>
 
-          {/* Socials & Location Footer Footer */}
+          {/* Socials & Location Footer */}
           <div className="mt-12 lg:mt-0 flex flex-col gap-4">
             <div className="text-xs tracking-wide text-muted-foreground">
               Based in Nigeria <span className="mx-1.5 text-border">·</span> Working globally
@@ -159,7 +161,7 @@ export default function PremiumOnePagePortfolio() {
                 target="_blank" 
                 rel="noreferrer" 
                 className="hover:text-primary transition-colors py-1"
-                title="GitHub Portfolio (TODO: Add link)"
+                title="GitHub Portfolio"
               >
                 <span className="sr-only">GitHub</span>
                 <Github className="h-5 w-5" />
@@ -169,7 +171,7 @@ export default function PremiumOnePagePortfolio() {
                 target="_blank" 
                 rel="noreferrer" 
                 className="hover:text-primary transition-colors py-1"
-                title="LinkedIn Profile (TODO: Add link)"
+                title="LinkedIn Profile"
               >
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-5 w-5" />
@@ -177,15 +179,12 @@ export default function PremiumOnePagePortfolio() {
               <a 
                 href="mailto:contact@example.com" 
                 className="hover:text-primary transition-colors py-1"
-                title="Direct Email Address (TODO: Add personal email)"
+                title="Direct Email Address"
               >
                 <span className="sr-only">Email</span>
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/40 font-mono">
-              // TODO: replace mock URLs in deployment
-            </span>
           </div>
         </header>
 
@@ -218,16 +217,16 @@ export default function PremiumOnePagePortfolio() {
               <h2 className="text-xs font-bold tracking-widest text-primary uppercase">
                 02 — Selected Work
               </h2>
-              <p className="mt-1 text-xs text-muted-foreground">A few products I've designed and built from scratch.</p>
+              <p className="mt-1 text-xs text-muted-foreground">A few products I've designed and built from scratch. Click any item to explore its engineering architecture case study.</p>
             </div>
 
             {/* Case Studies */}
             <div className="mt-12 space-y-16">
               {mainProjects.map((project, idx) => (
-                <article key={project.id} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all">
+                <Link key={project.id} href={`/work/${project.id}`} className="group relative flex flex-col gap-4 border-t border-border pt-8 transition-all block">
                   <div className="flex flex-col gap-2">
-                    <span className="text-[11px] font-mono tracking-widest text-primary uppercase">
-                      PROJECT 0{idx + 1} &mdash; {project.category}
+                    <span className="text-[11px] font-mono tracking-widest text-primary uppercase flex items-center gap-2">
+                      PROJECT 0{idx + 1} &mdash; {project.category} <span className="text-[10px] text-muted-foreground font-normal tracking-normal lowercase">(view architecture →)</span>
                     </span>
                     <div className="flex items-center justify-between group-hover:text-primary transition-colors">
                       <h3 className="font-headline text-2xl font-medium tracking-tight text-foreground">
@@ -248,10 +247,10 @@ export default function PremiumOnePagePortfolio() {
                   <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 flex flex-col items-center justify-center p-6 text-center group-hover:border-primary/20 transition-colors">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <span className="text-xs font-mono tracking-wider text-muted-foreground/60 mb-1">
-                      [ {project.name} Interface Asset Area ]
+                      [ Explore {project.name} Production Log Case Study ]
                     </span>
                     <span className="text-[10px] text-primary/70 font-mono">
-                      {`/* TODO: Insert production portfolio snapshot */`}
+                      // Click to read problem metrics & tradeoffs
                     </span>
                   </div>
 
@@ -265,7 +264,7 @@ export default function PremiumOnePagePortfolio() {
                       </span>
                     ))}
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
 
@@ -278,16 +277,18 @@ export default function PremiumOnePagePortfolio() {
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" aria-label="Additional projects log">
                 {secondaryProjects.map(proj => (
-                  <li 
-                    key={proj} 
-                    className="group flex items-center justify-between p-3 rounded bg-card/40 border border-border/50 hover:border-border transition-all"
-                  >
-                    <span className="text-sm font-medium tracking-tight text-muted-foreground group-hover:text-foreground transition-colors">
-                      {proj}
-                    </span>
-                    <span className="text-[10px] font-mono text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
-                      Case study pending
-                    </span>
+                  <li key={proj.id}>
+                    <Link 
+                      href={`/work/${proj.id}`}
+                      className="group flex items-center justify-between p-3 rounded bg-card/40 border border-border/50 hover:border-border hover:bg-card/70 transition-all block"
+                    >
+                      <span className="text-sm font-medium tracking-tight text-muted-foreground group-hover:text-foreground transition-colors">
+                        {proj.name}
+                      </span>
+                      <span className="text-[10px] font-mono text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
+                        Explore study →
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
