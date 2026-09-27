@@ -6,15 +6,18 @@ export function AboutSection() {
           01 — About
         </h2>
       </div>
-      <div className="space-y-5 text-sm text-muted-foreground leading-relaxed">
+      <div className="space-y-6 text-base text-muted-foreground leading-relaxed">
         <p>
-          I'm Sunday, a full-stack product developer focused on turning premium ideas into functional digital systems. I operate comfortably across interface development, robust architecture pipelines, AI prompts orchestration, databases, and secure payment setups.
+          I'm Sunday, a full-stack product developer focused on turning ambitious ideas into functional digital products.
         </p>
         <p>
-          My work stands at the intersection of business logic and clean engineering. I build tools that are optimized for actual utility, scalable structure, and clarity, avoiding fragile prototypes or superficial mockups.
+          I work across product interfaces, backend architecture, APIs, databases, AI integrations, and payment systems — taking products from an idea on a screen to something people can actually use.
         </p>
-        <p className="text-foreground/90 font-medium pt-2">
-          Let's move your product concept from discovery straight into production.
+        <p>
+          My work sits at the intersection of product thinking and engineering. I care about how things look, how they work, and what happens underneath. The goal is simple: build digital products that feel considered, perform reliably, and are built to grow.
+        </p>
+        <p className="text-foreground/90 font-mono text-xs pt-2 tracking-wide uppercase">
+          // Coordinates: Lagos, Nigeria · Working globally
         </p>
       </div>
     </section>
