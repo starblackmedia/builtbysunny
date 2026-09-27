@@ -19,6 +19,9 @@ type ProjectModalProps = {
 };
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const imageUrl = project.image?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+  const imageHint = project.image?.imageHint || 'placeholder image';
+
   return (
     <div
       onClick={onClose}
@@ -33,11 +36,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <CardHeader className="p-0">
             <div className="relative aspect-video w-full">
               <Image
-                src={project.image.imageUrl}
+                src={imageUrl}
                 alt={project.name}
                 fill
                 className="object-cover"
-                data-ai-hint={project.image.imageHint}
+                data-ai-hint={imageHint}
               />
             </div>
           </CardHeader>

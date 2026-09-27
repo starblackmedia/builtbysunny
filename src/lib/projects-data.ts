@@ -59,7 +59,7 @@ export const projectsData: Project[] = [
     tradeoffs:
       'Chose Firebase for its ease of use and real-time capabilities, accepting potential scaling limitations compared to a custom WebSocket solution.',
     architectureSVG: placeholderSVG,
-    image: PlaceHolderImages.find((p) => p.id === 'project-web')!,
+    image: PlaceHolderImages.find((p) => p.id === 'experiment2') || PlaceHolderImages[0],
   },
   {
     name: 'Flutter E-commerce App',
@@ -77,7 +77,7 @@ export const projectsData: Project[] = [
     tradeoffs:
       "Flutter's single codebase is efficient, but required learning a new framework and language (Dart). Some native-specific features required custom platform channels.",
     architectureSVG: placeholderSVG,
-    image: PlaceHolderImages.find((p) => p.id === 'project-mobile')!,
+    image: PlaceHolderImages.find((p) => p.id === 'decision2') || PlaceHolderImages[0],
   },
   {
     name: 'Serverless API for IoT',
@@ -95,7 +95,7 @@ export const projectsData: Project[] = [
     tradeoffs:
       'Serverless architecture minimized operational overhead, but cold starts occasionally introduced latency, which was mitigated using provisioned concurrency.',
     architectureSVG: placeholderSVG,
-    image: PlaceHolderImages.find((p) => p.id === 'project-backend')!,
+    image: PlaceHolderImages.find((p) => p.id === 'experiment3') || PlaceHolderImages[0],
   },
   {
     name: 'AI Content Summarizer',
@@ -113,6 +113,6 @@ export const projectsData: Project[] = [
     tradeoffs:
       'Using a pre-trained model is fast, but offers less control than training a custom model. Prompt engineering is more of an art than a science.',
     architectureSVG: placeholderSVG,
-    image: PlaceHolderImages.find((p) => p.id === 'project-ai')!,
+    image: PlaceHolderImages.find((p) => p.id === 'experiment1') || PlaceHolderImages[0],
   },
 ];

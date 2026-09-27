@@ -6,9 +6,7 @@ import { Project } from '@/lib/projects-data';
 import { Badge } from '@/components/ui/badge';
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -25,6 +23,9 @@ const statusColors = {
 };
 
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
+  const imageUrl = project.image?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
+  const imageHint = project.image?.imageHint || 'placeholder image';
+
   return (
     <motion.div
       layoutId={`card-container-${project.name}`}
@@ -35,11 +36,11 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
         <CardHeader className="p-0">
           <div className="relative aspect-video w-full">
             <Image
-              src={project.image.imageUrl}
+              src={imageUrl}
               alt={project.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
-              data-ai-hint={project.image.imageHint}
+              data-ai-hint={imageHint}
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -53,7 +54,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
             </motion.div>
             <Badge
               className={`text-xs ${
-                statusColors[project.status]
+                statusColors[project.status] || 'bg-secondary'
               } transition-colors`}
             >
               {project.status}

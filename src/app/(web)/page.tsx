@@ -99,8 +99,13 @@ const coreTech = [
 
 export default function PremiumOnePagePortfolio() {
   const [activeSection, setActiveSection] = useState('about');
+  const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
+    setMounted(true);
+    
+    if (typeof window === 'undefined') return;
+
     const options = {
       root: null,
       rootMargin: '-25% 0px -60% 0px',
@@ -131,6 +136,11 @@ export default function PremiumOnePagePortfolio() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Gracefully render background frame prior to hydration to guarantee no layout shifts
+  if (!mounted) {
+    return <div className="min-h-screen bg-background" />;
+  }
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
