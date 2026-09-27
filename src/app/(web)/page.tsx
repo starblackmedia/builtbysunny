@@ -18,7 +18,8 @@ const mainProjects = [
     category: 'Music Technology Platform',
     description: 'A music technology platform built to help independent artists manage, distribute, and grow their careers with intelligent performance insights.',
     role: 'Founder & Full-Stack Developer',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'AI', 'APIs', 'Payments']
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'AI', 'APIs', 'Payments'],
+    liveUrl: 'https://tunegrock.com'
   },
   {
     id: 'dropkudi',
@@ -26,17 +27,45 @@ const mainProjects = [
     category: 'Modern Gifting Platform',
     description: 'A modern gifting platform that gives people a dedicated, secure page to receive gifts, congratulations, and support for birthdays, weddings, celebrations, and special life events.',
     role: 'Founder & Full-Stack Developer',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'APIs', 'Payments']
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'APIs', 'Payments'],
+    liveUrl: 'https://dropkudi.com'
+  },
+  {
+    id: 'proofen',
+    name: 'Proofen',
+    category: 'Product Verification Tool',
+    description: 'An advanced cryptographic digital ledger solution for certifying asset authenticity and tracing item lifecycles seamlessly.',
+    role: 'Full-Stack Developer',
+    technologies: ['Next.js', 'TypeScript', 'Cryptography', 'Node.js'],
+    liveUrl: 'https://useprofeen.com'
+  },
+  {
+    id: 'ironlockbox',
+    name: 'IronLockBox',
+    category: 'Secure Storage Vault',
+    description: 'A high-security encrypted cloud storage repository built for safeguarding operational config secrets and server credential protocols.',
+    role: 'Backend Architect',
+    technologies: ['Node.js', 'Security Layers', 'Databases', 'TypeScript'],
+    liveUrl: 'https://app.ironlockbox.com'
+  },
+  {
+    id: 'starblackmedia',
+    name: 'Starblack Media',
+    category: 'Enterprise Production Suite',
+    description: 'High-throughput automated asset distribution network for heavy broadcast pipelines and asynchronous rendering pipelines.',
+    role: 'Lead Full-Stack Architect',
+    technologies: ['Next.js', 'Cloud Compute', 'APIs'],
+    liveUrl: 'https://starblackmedia.com'
+  },
+  {
+    id: 'pureprestige',
+    name: 'Pure Prestige',
+    category: 'Premium Experience Ecosystem',
+    description: 'Bespoke client management solution crafted for ultra-high-end luxury brands featuring atomic presentation components.',
+    role: 'Lead Product Developer',
+    technologies: ['React', 'TypeScript', 'Tailwind'],
+    liveUrl: 'https://purprestige.com'
   }
-];
-
-const secondaryProjects = [
-  { id: 'proofen', name: 'Proofen' },
-  { id: 'ironlockbox', name: 'IronLockBox' },
-  { id: 'supernovaa', name: 'Supernovaa' },
-  { id: 'unrulymusik', name: 'UnRulyMusik' },
-  { id: 'starblackmedia', name: 'Starblack Media' },
-  { id: 'pureprestige', name: 'Pure Prestige' }
 ];
 
 const capabilities = [
@@ -250,7 +279,7 @@ export default function PremiumOnePagePortfolio() {
                       [ Explore {project.name} Production Log Case Study ]
                     </span>
                     <span className="text-[10px] text-primary/70 font-mono">
-                      // Click to read problem metrics & tradeoffs
+                      // Target domain: {project.liveUrl}
                     </span>
                   </div>
 
@@ -266,32 +295,6 @@ export default function PremiumOnePagePortfolio() {
                   </div>
                 </Link>
               ))}
-            </div>
-
-            {/* More things I've built section */}
-            <div className="mt-20 pt-8 border-t border-border">
-              <h3 className="text-sm font-semibold tracking-wide text-foreground uppercase">
-                More things I've built
-              </h3>
-              <p className="text-xs text-muted-foreground mt-1 mb-6">Understated production products, architecture frameworks and libraries.</p>
-              
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" aria-label="Additional projects log">
-                {secondaryProjects.map(proj => (
-                  <li key={proj.id}>
-                    <Link 
-                      href={`/work/${proj.id}`}
-                      className="group flex items-center justify-between p-3 rounded bg-card/40 border border-border/50 hover:border-border hover:bg-card/70 transition-all block"
-                    >
-                      <span className="text-sm font-medium tracking-tight text-muted-foreground group-hover:text-foreground transition-colors">
-                        {proj.name}
-                      </span>
-                      <span className="text-[10px] font-mono text-muted-foreground/40 group-hover:text-primary/70 transition-colors">
-                        Explore study →
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </div>
           </section>
 

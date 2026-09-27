@@ -27,7 +27,7 @@
     {
       "id": "decision2",
       "description": "Messaging queue architecture diagram",
-      "imageUrl": "https://images.unsplash.com/photo-1529554951413-0110990a62a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzeXN0ZW0lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcwItemM2OOMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1529554951413-0110990a62a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzeXN0ZW0lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcwMjY4NjM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "system architecture"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": "project-backend",
       "description": "Server and database illustration",
-      "imageUrl": "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzZXJ2ZXIlMjBkYXRhYmFzZXxlbnwwfHx8fDE3NzAzMDk0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzZXJ2ZXIlMjBkYXRhYmFzZXxlbnwwfHx8fDE3NzObjA5NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "server database"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "project-mobile",
       "description": "Mobile application on a phone",
-      "imageUrl": "https://images.unsplash.com/photo-1601972602237-8c79241e468b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2JpbGUlMjBhcHB|ZW58MHx8fHwxNzcwMzc2ODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1601972602237-8c79241e468b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzcwMzc2ODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mobile app"
     },
     {
@@ -69,26 +69,38 @@
     {
       "id": "cs-tunegrock",
       "description": "TuneGrock music engineering portal panel",
-      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "/images/tunegrock.JPG",
       "imageHint": "music dashboard"
     },
     {
       "id": "cs-dropkudi",
       "description": "DropKudi gifting digital application ledger",
-      "imageUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "/images/dropkudi.JPG",
       "imageHint": "gifting interface"
     },
     {
       "id": "cs-proofen",
       "description": "Cryptographic authentication hash platform",
-      "imageUrl": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "/images/proofen.JPG",
       "imageHint": "secure ledger"
     },
     {
       "id": "cs-ironlockbox",
       "description": "Isolated credential storage data frame",
-      "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "/images/ironlockbox.JPG",
       "imageHint": "encrypted storage"
+    },
+    {
+      "id": "cs-starblackmedia",
+      "description": "Starblack Media enterprise distribution system",
+      "imageUrl": "/images/starblackmedia.JPG",
+      "imageHint": "broadcast infrastructure"
+    },
+    {
+      "id": "cs-pureprestige",
+      "description": "Pure Prestige luxury experiential layout interface",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "luxury dashboard"
     }
   ]
 }
