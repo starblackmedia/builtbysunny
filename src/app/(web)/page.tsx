@@ -137,7 +137,6 @@ export default function PremiumOnePagePortfolio() {
     }
   };
 
-  // Gracefully render background frame prior to hydration to guarantee no layout shifts
   if (!mounted) {
     return <div className="min-h-screen bg-background" />;
   }
@@ -149,20 +148,32 @@ export default function PremiumOnePagePortfolio() {
         {/* LEFT COLUMN - FIXED PANEL */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col">
-            <h1 className="font-headline text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
-              SUNDAY J.
-            </h1>
-            <h2 className="mt-3 text-lg font-medium tracking-tight text-primary">
-              Full-Stack Product Developer
-            </h2>
-            <p className="mt-6 text-3xl font-light tracking-tight text-foreground/90 max-w-xs leading-tight font-headline">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-primary/20 bg-muted">
+                <Image
+                  src="/images/SundayJoseph-1.JPG"
+                  alt="Sunday Joseph"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h1 className="font-headline text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
+                  SUNDAY J.
+                </h1>
+                <h2 className="mt-1 text-sm font-medium tracking-tight text-primary uppercase">
+                  Product Developer
+                </h2>
+              </div>
+            </div>
+
+            <p className="text-3xl font-light tracking-tight text-foreground/90 max-w-xs leading-tight font-headline">
               I build <span className="text-foreground font-medium underline decoration-primary/40 underline-offset-4">digital products</span>.
             </p>
-            <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-6 max-w-sm text-sm text-muted-foreground leading-relaxed">
               I build SaaS, web applications, AI-powered products, and digital experiences from idea to production.
             </p>
 
-            {/* Desktop Navigation Link Indicators */}
             <nav className="mt-16 hidden lg:block" aria-label="In-page jump links">
               <ul className="flex flex-col gap-4 w-fit">
                 {sections.map(sec => {
@@ -190,7 +201,6 @@ export default function PremiumOnePagePortfolio() {
             </nav>
           </div>
 
-          {/* Socials & Location Footer */}
           <div className="mt-12 lg:mt-0 flex flex-col gap-4">
             <div className="text-xs tracking-wide text-muted-foreground">
               Based in Nigeria <span className="mx-1.5 text-border">·</span> Working globally
@@ -261,11 +271,10 @@ export default function PremiumOnePagePortfolio() {
               <p className="mt-1 text-xs text-muted-foreground">A few products I've designed and built from scratch. Click any item to explore its engineering architecture case study.</p>
             </div>
 
-            {/* Case Studies */}
             <div className="mt-12 space-y-16">
               {mainProjects.map((project, idx) => {
                 const projectImage = PlaceHolderImages.find(p => p.id === `cs-${project.id}`) || {
-                  imageUrl: 'https://picsum.photos/seed/generic/600/400',
+                  imageUrl: '/images/placeholder.JPG',
                   imageHint: 'product preview'
                 };
 
@@ -290,7 +299,6 @@ export default function PremiumOnePagePortfolio() {
                       {project.description}
                     </p>
 
-                    {/* Premium Product Screenshot Image Frame */}
                     <div className="relative mt-2 aspect-video w-full overflow-hidden rounded bg-card border border-border/80 group-hover:border-primary/30 transition-colors">
                       <Image 
                         src={projectImage.imageUrl}
@@ -345,7 +353,6 @@ export default function PremiumOnePagePortfolio() {
               ))}
             </div>
 
-            {/* Core horizontal typography lists for skills */}
             <div className="mt-16 pt-8 border-t border-border">
               <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-bold mb-4">
                 Validated Engineering Stack
@@ -389,7 +396,6 @@ export default function PremiumOnePagePortfolio() {
                 </a>
               </div>
 
-              {/* Placeholder Directory Links */}
               <div className="mt-8 pt-6 border-t border-border/60 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Direct Outreach</span>
@@ -404,7 +410,6 @@ export default function PremiumOnePagePortfolio() {
               </div>
             </div>
 
-            {/* Premium Sophisticated Footer */}
             <footer className="mt-24 pt-8 border-t border-border/40 text-xs text-muted-foreground/60 flex flex-col sm:flex-row sm:justify-between gap-4 font-mono">
               <div>
                 <span className="block text-foreground font-bold tracking-tight">SUNDAY J.</span>

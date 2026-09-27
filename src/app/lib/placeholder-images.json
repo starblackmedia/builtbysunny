@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -34,8 +33,38 @@
     {
       "id": "cs-pureprestige",
       "description": "Pure Prestige luxury experiential layout interface",
-      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "/images/pureprestige.JPG",
       "imageHint": "luxury dashboard"
+    },
+    {
+      "id": "experiment1",
+      "description": "Abstract code visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1546980129-6d518dbb51b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "abstract code"
+    },
+    {
+      "id": "experiment2",
+      "description": "Graph data visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "experiment3",
+      "description": "Diagram of cloud architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1654506582570-829893ad698f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "cloud architecture"
+    },
+    {
+      "id": "decision1",
+      "description": "Database schema diagram",
+      "imageUrl": "https://images.unsplash.com/photo-1619771766980-368d32e44b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "database schema"
+    },
+    {
+      "id": "decision2",
+      "description": "Messaging queue architecture diagram",
+      "imageUrl": "https://images.unsplash.com/photo-1529554951413-0110990a62a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "system architecture"
     }
   ]
 }

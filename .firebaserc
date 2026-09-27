@@ -2,6 +2,14 @@
   "projects": {
     "default": "starblack-media-m840c"
   },
-  "targets": {},
+  "targets": {
+    "starblack-media-m840c": {
+      "hosting": {
+        "builtbysunny": [
+          "builtbysunny"
+        ]
+      }
+    }
+  },
   "etags": {}
 }
