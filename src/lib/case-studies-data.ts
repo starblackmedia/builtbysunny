@@ -94,7 +94,7 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     problemStatement: 'Luxury hospitality networks demand zero-latency customer request orchestration combined with absolute aesthetic fidelity across distributed device categories. The goal was to turn a traditional booking process into a convenient digital experience while keeping the interface clear.',
     designApproach: 'Built a pristine visual presentation interface featuring atomic typography layout schemas, implementing the automated booking flow foundations, and crafting zero-dependency layout transitions.',
     tradeoffs: 'Designed strictly around widescreen lifestyle desktop layouts, requiring simplified adaptive content flow layers on smaller mobile screens.',
-    liveUrl: 'https://purprestige.com',
+    liveUrl: 'https://studio--prestige-clean-landing.us-central1.hosted.app',
     placeholderImageId: 'cs-pureprestige',
     hasFullContent: true
   }

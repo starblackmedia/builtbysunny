@@ -1,5 +1,6 @@
-# Firebase Studio
 
-This is a NextJS starter in Firebase Studio.
+# Built by Sunny
 
-To get started, take a look at src/app/page.tsx.
+Personal developer portfolio of Sunday J. — a self-taught full-stack developer and founder building digital products, web applications, and technology-driven experiences.
+
+**Live Website:** https://builtbysunny.web.app/

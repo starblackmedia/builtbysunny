@@ -3,12 +3,30 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Sunday J. — Full-Stack Product Developer',
-  description: 'Sunday J. is a full-stack product developer building SaaS, web applications, AI-powered products, and digital systems from idea to production.',
+  title: 'Built by Sunny | Full-Stack Developer',
+  description:
+    'Portfolio of Sunday J. — Full-Stack Developer building digital products and web applications.',
   openGraph: {
-    title: 'Sunday J. — Full-Stack Product Developer',
-    description: 'Building SaaS, web applications, AI-powered products, and digital systems from idea to production.',
+    title: 'Built by Sunny | Sunday J.',
+    description:
+      'Building digital products, web applications and technology-driven experiences.',
+    url: 'https://builtbysunny.web.app',
+    siteName: 'Built by Sunny',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Built by Sunny — Sunday J., Full-Stack Developer',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Built by Sunny | Sunday J.',
+    description: 'Full-Stack Developer building digital products.',
+    images: ['/opengraph-image.png'],
   },
 };
 

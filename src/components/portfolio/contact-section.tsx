@@ -28,10 +28,12 @@ export function ContactSection() {
           <div>
             <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Direct Outreach</span>
             <a href="mailto:builtbysunny@starblackmedia.com" className="text-foreground hover:text-primary transition-colors block font-mono">Email Direct</a>
+            <a href="mailto:builtbysunny@starblackmedia.com" className="text-muted-foreground/60 hover:text-primary transition-colors block font-mono text-[10px] mt-0.5">builtbysunny@starblackmedia.com</a>
           </div>
           <div>
             <span className="block text-muted-foreground/60 font-mono uppercase text-[10px] mb-1">Professional Logs</span>
             <a href="https://www.linkedin.com/in/builtbysunny/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors block font-mono">LinkedIn Profile</a>
+            <a href="https://github.com/starblackmedia/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors block font-mono">GitHub Profile</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface IdentityPanelProps {
@@ -83,6 +83,15 @@ export function IdentityPanel({ activeSection, scrollToSection, sections }: Iden
         </div>
         
         <div className="flex items-center gap-5 text-muted-foreground" aria-label="Social media">
+          <a 
+            href="https://github.com/starblackmedia/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-primary transition-colors"
+            title="GitHub"
+          >
+            <Github className="h-5 w-5" />
+          </a>
           <a 
             href="https://www.linkedin.com/in/builtbysunny/" 
             target="_blank" 

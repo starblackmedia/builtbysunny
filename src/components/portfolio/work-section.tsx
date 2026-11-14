@@ -37,7 +37,7 @@ const mainProjects = [
     id: 'ironlockbox',
     name: 'IronLockBox',
     category: 'Secure Storage Vault',
-    description: 'A digital security and storage platform designed to give users a secure place to store and manage important information and digital assets. The product focuses on privacy, organization, and controlled access, providing a structured experience for keeping sensitive information in one place.',
+    description: 'A digital security and storage platform designed to give users a secure place to store and manage important information and digital assets.',
     role: 'Full-Stack Developer & Backend Architect',
     technologies: ['Flutter', 'Security Layers', 'Databases', 'Dart', 'TypeScript'],
     liveUrl: 'https://app.ironlockbox.com',
@@ -47,7 +47,7 @@ const mainProjects = [
     id: 'starblackmedia',
     name: 'Starblack Media',
     category: 'Enterprise Production Suite',
-    description: 'A digital product and software development studio focused on building modern websites, web applications, SaaS products, and custom digital systems for businesses and organizations. The studio was created to combine product thinking, design, and engineering into practical digital solutions.',
+    description: 'A digital product and software development studio focused on building modern websites, web applications, SaaS products, and custom digital systems for businesses and organizations.',
     role: 'Lead Full-Stack Architect',
     technologies: ['Next.js', 'Cloud Compute', 'APIs', 'Databases'],
     liveUrl: 'https://starblackmedia.com',
@@ -57,10 +57,10 @@ const mainProjects = [
     id: 'pureprestige',
     name: 'Pure Prestige',
     category: 'Premium Experience Ecosystem',
-    description: 'A cleaning service web application designed to make it easier for customers to discover cleaning services and book appointments online. The platform provides a convenient experience where customers can select cleaning service types, provide booking information, and choose suitable schedules.',
+    description: 'A cleaning service web application designed to make it easier for customers to discover cleaning services and book appointments online.',
     role: 'Lead Product Developer & Full-Stack Developer',
     technologies: ['React', 'TypeScript', 'Tailwind', 'Booking Engines'],
-    liveUrl: 'https://purprestige.com',
+    liveUrl: 'https://studio--prestige-clean-landing.us-central1.hosted.app',
     imageUrl: '/images/pureprestige.JPG'
   }
 ];
